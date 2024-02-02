@@ -47,7 +47,6 @@ persist.ffmpeg_codec2.v4l2.h264=false
 persist.ffmpeg_codec2.v4l2.h265=true
 
 # Graphics
-ro.hardware.egl=mesa
 ro.hardware.hwcomposer=drm
 ro.hardware.vulkan=broadcom
 ro.opengles.version=196609
@@ -63,12 +62,6 @@ ro.lmk.low=1001
 ro.lmk.medium=800
 ro.lmk.upgrade_pressure=100
 ro.lmk.use_minfree_levels=true
-
-# Lockscreen
-ro.lockscreen.disable.default=true
-
-# Media
-debug.stagefright.c2inputsurface=-1
 
 # MGLRU
 persist.device_config.mglru_native.lru_gen_config=core

@@ -1,5 +1,5 @@
 #
-# Copyright (C) 2021-2023 KonstaKANG
+# Copyright (C) 2021-2022 KonstaKANG
 #
 # SPDX-License-Identifier: Apache-2.0
 #
@@ -16,11 +16,8 @@ PRODUCT_AAPT_CONFIG := normal mdpi hdpi
 PRODUCT_AAPT_PREF_CONFIG := hdpi
 PRODUCT_CHARACTERISTICS := automotive,nosdcard
 
-# APEX
-$(call inherit-product, $(SRC_TARGET_DIR)/product/updatable_apex.mk)
-
 # API level
-PRODUCT_SHIPPING_API_LEVEL := 34
+PRODUCT_SHIPPING_API_LEVEL := 33
 
 # Audio
 PRODUCT_PACKAGES += \
@@ -108,21 +105,22 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     android.hardware.camera.provider@2.5-service_64 \
     camera.libcamera \
-    ipa_rpi_vc4
+    ipa_rpi
 
 PRODUCT_COPY_FILES += \
     $(DEVICE_PATH)/camera/camera_hal.yaml:$(TARGET_COPY_OUT_VENDOR)/etc/libcamera/camera_hal.yaml \
-    external/libcamera/src/ipa/rpi/vc4/data/imx219.json:$(TARGET_COPY_OUT_VENDOR)/etc/libcamera/ipa/rpi/vc4/imx219.json \
-    external/libcamera/src/ipa/rpi/vc4/data/imx219_noir.json:$(TARGET_COPY_OUT_VENDOR)/etc/libcamera/ipa/rpi/vc4/imx219_noir.json \
-    external/libcamera/src/ipa/rpi/vc4/data/imx477.json:$(TARGET_COPY_OUT_VENDOR)/etc/libcamera/ipa/rpi/vc4/imx477.json \
-    external/libcamera/src/ipa/rpi/vc4/data/imx477_noir.json:$(TARGET_COPY_OUT_VENDOR)/etc/libcamera/ipa/rpi/vc4/imx477_noir.json \
-    external/libcamera/src/ipa/rpi/vc4/data/imx477_scientific.json:$(TARGET_COPY_OUT_VENDOR)/etc/libcamera/ipa/rpi/vc4/imx477_scientific.json \
-    external/libcamera/src/ipa/rpi/vc4/data/imx708.json:$(TARGET_COPY_OUT_VENDOR)/etc/libcamera/ipa/rpi/vc4/imx708.json \
-    external/libcamera/src/ipa/rpi/vc4/data/imx708_noir.json:$(TARGET_COPY_OUT_VENDOR)/etc/libcamera/ipa/rpi/vc4/imx708_noir.json \
-    external/libcamera/src/ipa/rpi/vc4/data/imx708_wide.json:$(TARGET_COPY_OUT_VENDOR)/etc/libcamera/ipa/rpi/vc4/imx708_wide.json \
-    external/libcamera/src/ipa/rpi/vc4/data/imx708_wide_noir.json:$(TARGET_COPY_OUT_VENDOR)/etc/libcamera/ipa/rpi/vc4/imx708_wide_noir.json \
-    external/libcamera/src/ipa/rpi/vc4/data/ov5647.json:$(TARGET_COPY_OUT_VENDOR)/etc/libcamera/ipa/rpi/vc4/ov5647.json \
-    external/libcamera/src/ipa/rpi/vc4/data/ov5647_noir.json:$(TARGET_COPY_OUT_VENDOR)/etc/libcamera/ipa/rpi/vc4/ov5647_noir.json
+    external/libcamera/src/ipa/raspberrypi/data/imx219.json:$(TARGET_COPY_OUT_VENDOR)/etc/libcamera/ipa/raspberrypi/imx219.json \
+    external/libcamera/src/ipa/raspberrypi/data/imx219_noir.json:$(TARGET_COPY_OUT_VENDOR)/etc/libcamera/ipa/raspberrypi/imx219_noir.json \
+    external/libcamera/src/ipa/raspberrypi/data/imx477.json:$(TARGET_COPY_OUT_VENDOR)/etc/libcamera/ipa/raspberrypi/imx477.json \
+    external/libcamera/src/ipa/raspberrypi/data/imx477_noir.json:$(TARGET_COPY_OUT_VENDOR)/etc/libcamera/ipa/raspberrypi/imx477_noir.json \
+    external/libcamera/src/ipa/raspberrypi/data/imx477_scientific.json:$(TARGET_COPY_OUT_VENDOR)/etc/libcamera/ipa/raspberrypi/imx477_scientific.json \
+    external/libcamera/src/ipa/raspberrypi/data/imx477_v1.json:$(TARGET_COPY_OUT_VENDOR)/etc/libcamera/ipa/raspberrypi/imx477_v1.json \
+    external/libcamera/src/ipa/raspberrypi/data/imx708.json:$(TARGET_COPY_OUT_VENDOR)/etc/libcamera/ipa/raspberrypi/imx708.json \
+    external/libcamera/src/ipa/raspberrypi/data/imx708_noir.json:$(TARGET_COPY_OUT_VENDOR)/etc/libcamera/ipa/raspberrypi/imx708_noir.json \
+    external/libcamera/src/ipa/raspberrypi/data/imx708_wide.json:$(TARGET_COPY_OUT_VENDOR)/etc/libcamera/ipa/raspberrypi/imx708_wide.json \
+    external/libcamera/src/ipa/raspberrypi/data/imx708_wide_noir.json:$(TARGET_COPY_OUT_VENDOR)/etc/libcamera/ipa/raspberrypi/imx708_wide_noir.json \
+    external/libcamera/src/ipa/raspberrypi/data/ov5647.json:$(TARGET_COPY_OUT_VENDOR)/etc/libcamera/ipa/raspberrypi/ov5647.json \
+    external/libcamera/src/ipa/raspberrypi/data/ov5647_noir.json:$(TARGET_COPY_OUT_VENDOR)/etc/libcamera/ipa/raspberrypi/ov5647_noir.json
 
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.camera.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.camera.xml \
@@ -172,7 +170,7 @@ PRODUCT_PACKAGES += \
     libglapi
 
 PRODUCT_COPY_FILES += \
-    frameworks/native/data/etc/android.software.opengles.deqp.level-2023-03-01.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.software.opengles.deqp.level.xml
+    frameworks/native/data/etc/android.software.opengles.deqp.level-2022-03-01.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.software.opengles.deqp.level.xml
 
 PRODUCT_PACKAGES += \
     vulkan.broadcom
@@ -180,7 +178,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES += \
     $(DEVICE_PATH)/vulkan/android.hardware.vulkan.version-1_2.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.vulkan.version.xml \
     frameworks/native/data/etc/android.hardware.vulkan.level-0.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.vulkan.level.xml \
-    frameworks/native/data/etc/android.software.vulkan.deqp.level-2023-03-01.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.software.vulkan.deqp.level.xml
+    frameworks/native/data/etc/android.software.vulkan.deqp.level-2022-03-01.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.software.vulkan.deqp.level.xml
 
 # Health
 PRODUCT_PACKAGES += \
@@ -240,8 +238,7 @@ PRODUCT_PACKAGES += \
 
 # USB
 PRODUCT_PACKAGES += \
-    android.hardware.usb-service.example \
-    android.hardware.usb.gadget@1.2-service.rpi
+    android.hardware.usb@1.0-service
 
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.usb.accessory.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.usb.accessory.xml \
@@ -263,7 +260,7 @@ $(call inherit-product, packages/modules/Virtualization/apex/product_packages.mk
 
 # Wifi
 PRODUCT_PACKAGES += \
-    android.hardware.wifi-service \
+    android.hardware.wifi@1.0-service \
     hostapd \
     hostapd_cli \
     libwpa_client \
