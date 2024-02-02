@@ -1,2 +1,1 @@
-# aaos_device_brcm_rpi4
-AAOS Device Support for RPI4
+Raspberry Vanilla AOSP 14 device configuration for Raspberry Pi 4.
