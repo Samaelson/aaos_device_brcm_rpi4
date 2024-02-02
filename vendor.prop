@@ -38,7 +38,7 @@ media.settings.xml=/vendor/etc/media_profiles_V1_0.xml
 ro.hardware.camera=libcamera
 
 # Display
-debug.drm.mode.force=1280x800
+debug.drm.mode.force=1024x800
 
 # FFmpeg
 persist.ffmpeg_codec2.rank.audio=16
