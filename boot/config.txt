@@ -2,6 +2,9 @@
 arm_64bit=1
 kernel=Image
 
+# Disable rainbow slash screen
+#disable_splash=1
+
 # Ramdisk
 initramfs ramdisk.img followkernel
 
