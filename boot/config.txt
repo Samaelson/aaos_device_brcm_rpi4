@@ -6,7 +6,11 @@ kernel=Image
 #disable_splash=1
 
 # Ramdisk
+gpio=21=ip,pu
+[gpio21=1]
 initramfs ramdisk.img followkernel
+[gpio21=0]
+initramfs ramdisk-recovery.img followkernel
 
 # Audio
 dtparam=audio=on
