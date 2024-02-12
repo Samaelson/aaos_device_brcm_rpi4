@@ -15,6 +15,13 @@ initramfs ramdisk-recovery.img followkernel
 # Audio
 dtparam=audio=on
 
+# Audio DAC
+#dtoverlay=hifiberry-dacplus
+
+# Boot device
+dtoverlay=android-sdcard
+#dtoverlay=android-usb
+
 # Camera
 camera_auto_detect=1
 start_x=1
@@ -33,11 +40,20 @@ hdmi_cvt=1024 600 60 3 0 0 0
 
 # Display panel
 #dtoverlay=vc4-kms-dsi-7inch
+#dtoverlay=cutiepi-panel
+#dtoverlay=vc4-kms-dsi-lt070me05000
+#dtoverlay=vc4-kms-dsi-lt070me05000-v2
 #dtoverlay=rpi-backlight
 
 # Graphics acceleration
+[gpio21=1]
 dtoverlay=vc4-kms-v3d
 dtoverlay=cma,cma-512
+
+# Fan
+#dtoverlay=gpio-fan
+#dtoverlay=rpi-poe
+#dtoverlay=rpi-poe-plus
 
 # I2C
 #dtparam=i2c_arm=on
@@ -51,8 +67,34 @@ enable_uart=1
 # SPI
 #dtparam=spi=on
 
+# Keys
+#dtoverlay=gpio-key,gpio=21,keycode=116,label="POWER"
+#dtoverlay=gpio-key,gpio=26,keycode=115,label="VOLUME_UP"
+#dtoverlay=gpio-key,gpio=20,keycode=114,label="VOLUME_DOWN"
+
+# Overclock
+#over_voltage=0
+#arm_freq=1500
+
+# RTC
+#dtoverlay=i2c-rtc,ds3231
+
+# Sensors
+#dtoverlay=android-i2c-sensor,mpu6050
+
+# Touchscreen
+#dtoverlay=ads7846,cs=1,penirq=25,penirq_pull=2,speed=50000,keep_vref_on=0,swapxy=0,pmax=255,xohms=150,xmin=200,xmax=3900,ymin=200,ymax=3900
+#dtoverlay=edt-ft5406
+#dtoverlay=goodix
+#dtoverlay=rpi-ft5406
+
 # USB
 dtoverlay=dwc2,dr_mode=peripheral
 [cm4]
 dtoverlay=dwc2,dr_mode=otg
 [all]
+
+# V4L2
+#dtoverlay=rpivid-v4l2
+
+#include config_user.txt
