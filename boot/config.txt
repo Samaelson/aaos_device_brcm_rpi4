@@ -12,6 +12,9 @@ dtparam=audio=on
 camera_auto_detect=1
 start_x=1
 
+# CPU
+arm_boost=1
+
 # Display
 disable_overscan=1
 
@@ -20,8 +23,8 @@ disable_overscan=1
 #dtoverlay=rpi-backlight
 
 # Graphics acceleration
+disable_fw_kms_setup=1
 dtoverlay=vc4-kms-v3d
-dtoverlay=cma,cma-512
 
 # I2C
 #dtparam=i2c_arm=on

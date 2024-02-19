@@ -1,12 +1,14 @@
 # Bluetooth
-/dev/ttyAMA0                                                                 0660   bluetooth  bluetooth
 /dev/rfkill                                                                  0660   bluetooth  bluetooth
-/dev/vcio                                                                    0660   system     bluetooth
 
 # Camera
 /dev/media*                                                                  0660   system     camera
 /dev/v4l-subdev*                                                             0660   system     camera
 /dev/video*                                                                  0660   system     camera
+
+# CEC
+/dev/cec0                                                                    0660   system     graphics
+/dev/cec1                                                                    0660   system     graphics
 
 # DMA
 /dev/dma_heap/linux,cma                                                      0666   system     graphics
@@ -18,11 +20,11 @@
 /sys/class/udc/fe980000.usb  current_speed                                   0664   system     system
 
 # V4L2
-/dev/media0                                                                  0666   media      media
+/dev/media0                                                                  0660   media      media
 /dev/media1                                                                  0660   media      media
-/dev/video10                                                                 0666   media      media
+/dev/video10                                                                 0660   media      media
 /dev/video11                                                                 0660   media      media
 /dev/video12                                                                 0660   media      media
 /dev/video18                                                                 0660   media      media
-/dev/video19                                                                 0666   media      media
+/dev/video19                                                                 0660   media      media
 /dev/video31                                                                 0660   media      media

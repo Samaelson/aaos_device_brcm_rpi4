@@ -26,9 +26,7 @@ TARGET_2ND_CPU_VARIANT := cortex-a72
 
 # Bluetooth
 BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := $(DEVICE_PATH)/bluetooth
-BOARD_CUSTOM_BT_CONFIG := $(DEVICE_PATH)/bluetooth/vnd_rpi4.txt
 BOARD_HAVE_BLUETOOTH := true
-BOARD_HAVE_BLUETOOTH_BCM := true
 
 # Camera
 BOARD_LIBCAMERA_IPAS := rpi/vc4
@@ -36,7 +34,7 @@ BOARD_LIBCAMERA_PIPELINES := rpi/vc4
 BOARD_LIBCAMERA_USES_MESON_BUILD := true
 
 # Display
-TARGET_SCREEN_DENSITY := 150
+TARGET_SCREEN_DENSITY := 240
 
 # Graphics
 BOARD_MESA3D_BUILD_LIBGBM := true
@@ -50,11 +48,9 @@ BOARD_CUSTOM_BOOTIMG_MK := $(DEVICE_PATH)/mkbootimg.mk
 BOARD_KERNEL_CMDLINE := console=ttyS0,115200 no_console_suspend root=/dev/ram0 rootwait androidboot.hardware=rpi4
 
 # Manifest
+DEVICE_FRAMEWORK_COMPATIBILITY_MATRIX_FILE := $(DEVICE_PATH)/framework_compatibility_matrix.xml
 DEVICE_MANIFEST_FILE := $(DEVICE_PATH)/manifest.xml
 DEVICE_MATRIX_FILE := $(DEVICE_PATH)/compatibility_matrix.xml
-
-# Media
-TARGET_ENABLE_MEDIADRM_64 := true
 
 # Partition sizes
 BOARD_FLASH_BLOCK_SIZE := 4096
