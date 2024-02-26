@@ -74,7 +74,7 @@ PRODUCT_PACKAGES += \
 # PRODUCT_LOCALES := de_DE
 # PRODUCT_PROPERTY_OVERRIDES += persist.sys.timezone=Europe/Berlin
 
-$(call inherit-product, device/brcm/rpi4-car/rpi4_car.mk)
+$(call inherit-product, device/brcm/rpi-car/rpi_car.mk)
 
 # Device identifier. This must come after all inclusions.
 PRODUCT_DEVICE := rpi4
