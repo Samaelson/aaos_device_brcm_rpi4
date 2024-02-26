@@ -70,6 +70,12 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     android.hardware.automotive.vehicle@2.0-default-service
 
+# Localization
+# PRODUCT_LOCALES := de_DE
+# PRODUCT_PROPERTY_OVERRIDES += persist.sys.timezone=Europe/Berlin
+
+$(call inherit-product, device/brcm/rpi4-car/rpi4_car.mk)
+
 # Device identifier. This must come after all inclusions.
 PRODUCT_DEVICE := rpi4
 PRODUCT_NAME := aosp_rpi4_car
