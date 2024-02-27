@@ -90,7 +90,8 @@ PRODUCT_COPY_FILES += \
 
 # Camera
 PRODUCT_PACKAGES += \
-    android.hardware.camera.provider-V1-external-service
+    android.hardware.camera.provider-V1-external-service \
+	android.hardware.automotive.evs@1.1
 
 PRODUCT_COPY_FILES += \
     $(DEVICE_PATH)/camera/external_camera_config.xml:$(TARGET_COPY_OUT_VENDOR)/etc/external_camera_config.xml
